@@ -38,6 +38,7 @@ namespace LoggingKata
 
             ITrackable localA = null;
             ITrackable localB = null;
+            double t = 0.000621371; // convertion rate meter to mile 
             double distance = 0;
 
             string localAName = "";
@@ -53,13 +54,13 @@ namespace LoggingKata
                     var firstLocal = new GeoCoordinate(locations[i].Location.Latitude, locations[i].Location.Longitude);
                     var secondLocal = new GeoCoordinate(locations[j].Location.Latitude, locations[j].Location.Longitude);
 
-                    var distanceB2in = firstLocal.GetDistanceTo(secondLocal);
+                    var distanceB2in = (firstLocal.GetDistanceTo(secondLocal))*t; // here I use converting meters into miles which is t 
 
                     if (distanceB2in > distance)
                     {
                         localAName = locations[i].Name;
                         localBName = locations[j].Name;
-                        distance = distanceB2in;
+                        distance = distanceB2in ;
                     }
 
                 }
