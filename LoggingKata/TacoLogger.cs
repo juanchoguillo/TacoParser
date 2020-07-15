@@ -28,5 +28,10 @@ namespace LoggingKata
         {
             Console.WriteLine($"Debug: {log}");
         }
+
+        public void LogError(string line, object exception)
+        {
+
+        }
     }
 }

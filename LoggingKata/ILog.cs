@@ -8,5 +8,6 @@ namespace LoggingKata
         void LogWarning(string log);
         void LogInfo(string log);
         void LogDebug(string log);
+        void LogError(string line, object exception);
     }
 }
