@@ -27,8 +27,8 @@ namespace LoggingKata
             var parser = new TacoParser();
 
             // Grab an IEnumerable of locations using the Select command: var locations = lines.Select(parser.Parse);
+            //var locations = lines.Select(parser.Parse).ToArray();
             var locations = lines.Select(parser.Parse).ToArray();
-
             // DON'T FORGET TO LOG YOUR STEPS
 
             // Now that your Parse method is completed, START BELOW ----------
@@ -40,11 +40,6 @@ namespace LoggingKata
             ITrackable localB = null;
             double t = 0.000621371; // convertion rate meter to mile 
             double distance = 0;
-
-            string localAName = "";
-            string localBName = "";
-
-
 
 
             for (var i = 0; i< locations.Length; i++)
@@ -58,16 +53,16 @@ namespace LoggingKata
 
                     if (distanceB2in > distance)
                     {
-                        localAName = locations[i].Name;
-                        localBName = locations[j].Name;
+                        localA = locations[i];
+                        localB = locations[j];
                         distance = distanceB2in ;
                     }
 
                 }
             }
 
-            Console.WriteLine($"the locals with the logest distance between are : {localAName} and {localBName}");
-            Console.WriteLine($"there we got {distance} between them");
+            Console.WriteLine($"the locals with the logest distance between are : {localA.Name} and {localB.Name}");
+            Console.WriteLine($"there we got {Math.Round(distance, 2)} between them");
 
 
 
