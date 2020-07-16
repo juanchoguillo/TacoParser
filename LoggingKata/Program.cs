@@ -64,6 +64,8 @@ namespace LoggingKata
             Console.WriteLine($"the locals with the logest distance between are : {localA.Name} and {localB.Name}");
             Console.WriteLine($"there we got {Math.Round(distance, 2)} between them");
 
+            // this is the new Branch
+
 
 
 
